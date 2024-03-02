@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JQuery</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+</head>
+<body>
+    <p id="pId">Neos Yazılım</p>
+    <p class="pClass">Neos Yazılım</p>
+    <p class="pClass">BekenYasin</p>
+    <div id="div" style="width: 100px; height: 100px; background-color: red;"></div>
+    <button id="btn">izle</button>
+    <script>
+        
+        // let a=$(".pClass").val
+        // let a=$(".pClass").text
+        // let a=$(".pClass").text()
+        // let a=$(".pClass").text()[0]
+        // console.log(a)
+        $(document).ready(
+            function(){
+                let a=[]
+                $("#pId").text("Yasin")
+                $(".pClass").click(
+                    function(){
+                        a.push($(this).text())
+                        
+                        $(this).text("Beken")
+                        
+                        
+                    }
+                )
+                $(".pClass").dblclick(
+                    function(){
+                        
+                        $(this).text(a[$(".pClass").index()])
+                        // a.clear
+                    }
+                )
+                $("#btn").click(
+                    function(){
+                        $("#div").hide()
+                    }
+                )
+            }
+            
+        )
+    </script>
+</body>
+</html>
